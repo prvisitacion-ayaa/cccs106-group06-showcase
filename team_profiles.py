@@ -48,7 +48,7 @@ def get_initial_team() -> List[TeamMember]:
             github_handle="prvisitacion-ayaa",
             avatar_icon=ft.Icons.PALETTE,
             accent_color=ft.Colors.TEAL_700,
-            photo_url="/dev1.jpg",
+            photo_url="assets/dev1.jpg",
         ),
 
         # ----------------------------------------------------------------------
@@ -63,7 +63,7 @@ def get_initial_team() -> List[TeamMember]:
             github_handle="devillazer-ui",
             avatar_icon=ft.Icons.DATA_OBJECT,
             accent_color=ft.Colors.AMBER_800,
-            photo_url="/dev2.jpg",
+            photo_url="assets/dev2.jpg",
         ),
 
         # ----------------------------------------------------------------------
@@ -78,7 +78,7 @@ def get_initial_team() -> List[TeamMember]:
             github_handle="elmically",
             avatar_icon=ft.Icons.BUG_REPORT,
             accent_color=ft.Colors.INDIGO_700,
-            photo_url="/dev3.jpg",
+            photo_url="assets/dev3.jpg",
         ),
     ]
 

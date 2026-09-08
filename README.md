@@ -4,7 +4,7 @@
 
 **Learn2Earn** is an academic note-sharing and reward platform designed to help students create, share, discover, and organize study materials.
 
-The platform encourages students to contribute their own academic notes by providing **NotePoints** for approved and useful contributions. Students can browse and search for study resources while administrators manage submitted content and maintain the quality of the platform.
+The platform encourages students to contribute their own academic notes by providing **LearnPoints** for approved and useful contributions. Students can browse and search for study resources while administrators manage submitted content and maintain the quality of the platform.
 
 The project also plans to include an **AI Note Assistant** that can help categorize notes, extract keywords, generate summaries, and create study questions.
 
@@ -17,7 +17,7 @@ The main objectives of Learn2Earn are to:
 - Provide a centralized platform for sharing student-created academic notes.
 - Help students easily discover relevant study materials.
 - Encourage students to contribute useful and original notes.
-- Implement a points-based reward system called **NotePoints**.
+- Implement a points-based reward system called **LearnPoints**.
 - Provide content moderation to maintain the quality of uploaded materials.
 - Provide administrators with tools for managing users and submitted content.
 - Explore the use of AI to improve note organization and study preparation.
@@ -37,7 +37,7 @@ The main objectives of Learn2Earn are to:
 - Save notes
 - Rate notes
 - Report inappropriate content
-- View NotePoints
+- View LearnPoints
 - View contribution history
 - Contributor levels
 
@@ -51,7 +51,7 @@ The main objectives of Learn2Earn are to:
 - Remove violating content
 - Manage users
 - Monitor user contributions
-- Monitor NotePoints activities
+- Monitor LearnPoints activities
 
 ###  AI Note Assistant
 
@@ -65,9 +65,9 @@ Planned AI-assisted features include:
 
 ---
 
-##  NotePoints
+##  LearnPoints
 
-Learn2Earn uses a virtual points system called **NotePoints** to encourage academic contributions.
+Learn2Earn uses a virtual points system called **LearnPointss** to encourage academic contributions.
 
 ### Example Activities
 
@@ -79,7 +79,7 @@ Learn2Earn uses a virtual points system called **NotePoints** to encourage acade
 | Positive rating | +2 |
 | Reported/removed content | Points may be deducted |
 
-> **Note:** The NotePoints system in the initial MVP is a virtual reward mechanism. Real-money rewards are outside the initial MVP and may be considered as a future enhancement.
+> **Note:** The LearnPoints system in the initial MVP is a virtual reward mechanism. Real-money rewards are outside the initial MVP and may be considered as a future enhancement.
 
 ---
 
@@ -112,7 +112,7 @@ Student Dashboard
                 Approved       Rejected
                     │             │
                     ▼             ▼
-               +NotePoints     Resubmit
+               +LearnPoints     Resubmit
                     │
                     ▼
               Available Notes

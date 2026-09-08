@@ -447,6 +447,6 @@ Learn2Earn/
 ├── requirements.txt
 ├── main.py
 ├── config.py
-├── README.md
-└── LICENSE
+├── verify_setup.py
+└── README.md
 ```

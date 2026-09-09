@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 .env
-.vscode/
+.vscode/*
+!.vscode/settings.json
 dist/
 build/
+pytest_cache/

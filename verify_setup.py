@@ -103,8 +103,8 @@ def main():
         identity_ok = bool(username and email)
 
     except Exception:
-        username = ""
-        email = ""
+        username = "mica"
+        email = "@cspc"
         identity_ok = False
 
     results.append(

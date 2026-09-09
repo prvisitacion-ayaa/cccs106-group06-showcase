@@ -4,4 +4,6 @@ __pycache__/
 .env
 .vscode/*
 !.vscode/settings.json
-.pytest_cache/
+dist/
+build/
+pytest_cache/

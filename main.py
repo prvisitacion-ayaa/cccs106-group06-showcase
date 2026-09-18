@@ -1,7 +1,6 @@
 import flet as ft
 
 from app.database.database import create_tables
-
 from app.ui.login import login_screen
 from app.ui.register import register_screen
 from app.ui.student import student_screen

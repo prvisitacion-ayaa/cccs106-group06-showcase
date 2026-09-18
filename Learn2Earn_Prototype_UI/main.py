@@ -1,16 +1,12 @@
 import flet as ft
 
-from app.database.database import create_tables
-
-from app.ui.login import login_screen
-from app.ui.register import register_screen
-from app.ui.student import student_screen
-from app.ui.admin import admin_screen
+from login import login_screen
+from register import register_screen
+from student import student_screen
+from admin import admin_screen
 
 
 def main(page: ft.Page):
-
-    create_tables()
 
     page.title = "Learn2Earn"
     page.window.width = 1100

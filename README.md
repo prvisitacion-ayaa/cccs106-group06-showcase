@@ -345,7 +345,6 @@ The following software and development tools will be used for the Learn2Earn pro
 | **Flet**                   | Frontend and graphical user interface development                |
 | **SQLite**                 | Database management and data storage                             |
 | **Python AI/ML Libraries** | Development of the AI Note Assistant                             |
-| **Git**                    | Version control and source-code management                       |
 | **GitHub**                 | Repository hosting, collaboration, and version control           |
 | **Visual Studio Code**     | Integrated development environment (IDE)                         |
 | **PyInstaller**            | Packaging the Python application                                 |

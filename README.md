@@ -216,15 +216,6 @@ The project is expected to produce:
 - Visitacion, Princess Shayla B.
 - Villazer, Devine Grace S.
 - Nomo, Micabelle Allison L.
-
-**Institution:** Camarines Sur Polytechnic Colleges (CSPC)
-
-**College:** College of Computer Studies
-
-**Course:** CS 3110 – Software Engineering 1
-
-**Project Adviser:** Tiffany Lyn Pandes
-
 ---
 
 *Learn2Earn aims to make academic resource sharing more organized, accessible, and rewarding by providing CSPC students with a platform for sharing knowledge and discovering relevant learning materials.*

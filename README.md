@@ -1,451 +1,230 @@
 # Learn2Earn: An Academic Note-Sharing and Reward Platform
 
-Learn2Earn is a student-centered academic note-sharing and reward platform designed for students of **Camarines Sur Polytechnic Colleges (CSPC)**. The system provides a centralized environment where students can upload, organize, search, explore, and share academic notes and study materials.
-
-The platform also introduces a **LearnPoints reward mechanism** that recognizes students for contributing useful and approved academic resources. In addition, Learn2Earn includes an **AI Note Assistant** prototype that can help categorize notes, identify key concepts, generate summaries, and create review questions.
----
-
-## Project Overview
-
-Students commonly use social media and other online platforms to share academic information. However, these platforms are not specifically designed for organizing student-created academic notes, reviewers, and other learning materials.
-
-Learn2Earn aims to provide a centralized academic platform where CSPC students can:
-
-- Upload their own academic notes and study materials
-- Organize resources by subject, topic, and course level
-- Search and browse available learning resources
-- Share useful academic materials
-- Receive feedback and evaluation on submitted resources
-- Earn LearnPoints for approved contributions
-- Use accumulated points to unlock selected premium features
-- Use an AI Note Assistant to process uploaded notes
-
-The platform is intended to support **peer learning, organized resource sharing, and student participation** within the CSPC community.
+A student-centered academic platform developed for **Camarines Sur Polytechnic Colleges (CSPC)** that allows students to upload, organize, search, explore, and share academic learning resources. The platform also includes academic resource recommendations, note evaluation, content moderation, and a reward system to encourage meaningful student contributions.
 
 ---
 
-## Problem Statement
+## About the Project
 
-Academic resources created and shared by students are often distributed across unrelated social media posts, groups, pages, and other platforms. This makes useful study materials difficult to locate and access.
+**Learn2Earn** is an academic note-sharing and reward platform designed to provide CSPC students with a centralized space for sharing and accessing student-created learning materials.
 
-Another challenge is the quality and reliability of student-generated content. Student-created resources may contain inaccurate or low-quality information. Therefore, a platform for student academic resource sharing should provide mechanisms for **content moderation, evaluation, organization, and feedback**.
+Students can upload their own academic notes, reviewers, summaries, and other study materials. These resources can be organized by subject, topic, and course or learning level, making them easier to discover and access.
 
-Learn2Earn addresses these problems by providing a centralized platform with:
+The platform uses a text-based Academic Resource Recommendation Module powered by **TF-IDF (Term Frequency-Inverse Document Frequency)** and **Cosine Similarity**. This module compares student search queries with uploaded academic notes and ranks the results according to their textual relevance.
 
-1. Academic resource organization
-2. Content moderation and evaluation
-3. Student contribution tracking
-4. LearnPoints rewards
-5. AI-assisted note organization
-
----
+Learn2Earn also includes a Note Accuracy Evaluation and Comparison Module, a content moderation process, and a LearnPoints reward system to encourage students to contribute useful academic materials.
 
 ## Objectives
 
-### General Objective
-
-To develop an academic platform that allows CSPC students to share, explore, and manage their own learning resources in an organized manner while encouraging meaningful academic contributions through content moderation and a reward system.
-
-### Specific Objectives
-
 The project aims to:
 
-1. Build an academic platform where CSPC students can upload, organize, explore, and share learning resources.
-2. Establish a content moderation and evaluation process for assessing the relevance, quality, and appropriateness of submitted resources.
-3. Create a reward system that encourages students to contribute valuable academic content.
-4. Develop an AI Note Assistant that can categorize notes, generate summaries, identify key concepts, and create review questions.
-5. Evaluate the usability and functionality of the platform through testing with selected CSPC students.
-
----
-
-## Key Features
-
-### 1. User Account Management
-
-Students can:
-
-- Create an account
-- Log in to the platform
-- Manage their profile
-- Track their contributions
-- View accumulated LearnPoints
-
----
-
-### 2. Academic Resource Upload
-
-Students can upload their own:
-
-- Notes
-- Reviewers
-- Study materials
-- Other academic learning resources
-
-Resources can be organized according to:
-
-- Subject
-- Topic
-- Course
-- Learning level
-
----
-
-### 3. Browse and Search
-
-Students can browse and search available academic resources.
-
-The organization of resources is intended to make relevant study materials easier to locate.
-
----
-
-### 4. Content Moderation and Evaluation
-
-Submitted academic resources undergo a moderation and evaluation process.
-
-Resources may be assessed based on:
-
-- Relevance
-- Quality
-- Appropriateness
-
-Approved contributions become eligible for LearnPoints.
-
-> **Note:** The moderation mechanism does not guarantee the academic correctness of every uploaded resource.
-
----
-
-### 5. LearnPoints Reward System
-
-LearnPoints are an **in-platform recognition and reward mechanism**.
-
-Students can earn points by contributing useful and approved academic materials.
-
-Accumulated points can be used to unlock selected premium features.
-
-LearnPoints:
-
-- Are recorded in the user's account
-- Are awarded for eligible approved contributions
-- Cannot be converted to cash
-- Do not represent monetary rewards
-- Are intended only for use within the platform
-
----
-
-### 6. AI Note Assistant
-
-The AI Note Assistant is a prototype feature designed to assist students with uploaded learning materials.
-
-It can help with:
-
-- Note categorization
-- Key concept identification
-- Summary generation
-- Review question generation
-
-The AI-generated results are intended as **study aids** and do not guarantee academic accuracy.
-
----
-
-### 7. Student Dashboard
-
-The student dashboard can provide access to information such as:
-
-- Uploaded resources
-- Contribution status
-- LearnPoints
-- Available rewards
-- Platform activities
-
----
-
-### 8. Administrator Dashboard
-
-Administrators can:
-
-- Manage users
-- Review submitted resources
-- Moderate content
-- Monitor platform activities
-- Manage reports
-- Monitor reward transactions
-
----
+- Develop an organized academic platform for CSPC students to upload, manage, explore, and share learning resources.
+- Provide an automated feature for evaluating and comparing the accuracy of uploaded academic notes using established criteria and trusted reference materials.
+- Implement an academic resource recommendation system using TF-IDF and Cosine Similarity.
+- Establish a content moderation and evaluation process to assess the relevance, quality, and appropriateness of submitted materials.
+- Introduce a LearnPoints reward system to encourage valuable academic contributions.
+- Evaluate the platform's functionality and usability through testing with selected CSPC students.
 
 ## Target Users
 
-### Primary Users
+**Students**
+- Create and manage accounts and profiles.
+- Upload original academic notes and study materials.
+- Organize resources by subject, topic, and course level.
+- Browse and search for available academic materials.
+- Receive recommendations based on search relevance.
+- View note evaluation results and comparisons.
+- Earn LearnPoints from approved academic contributions.
+- Use accumulated points to unlock selected premium features.
 
-**CSPC Students**
+**Administrators**
+- Manage student accounts.
+- Review submitted academic materials.
+- Approve or reject uploaded resources.
+- Monitor content moderation and evaluation.
+- Track platform activities and contributions.
+- Manage LearnPoints and related reward activities.
 
-Students are the primary users of Learn2Earn. The platform is intended for students who:
+## Main Features
 
-- Need additional study resources
-- Want to share their own reviewers and notes
-- Want to discover materials created by other students
-- Want to participate in peer-supported learning
+### 1. Academic Resource Sharing
 
-### Administrator
+Students can upload, organize, browse, search, and share original academic materials, including:
 
-The administrator is responsible for:
+- Lecture notes
+- Reviewers
+- Summaries
+- Study guides
+- Other academic learning materials
 
-- User management
-- Resource review
-- Content moderation
-- Platform activity monitoring
-- Reward management
+Uploaded resources are organized using relevant information such as subject, topic, course, learning level, and keywords.
+
+### 2. Academic Resource Recommendation System
+
+Learn2Earn uses **TF-IDF and Cosine Similarity** to identify and rank academic notes based on their textual relevance to a student's search query.
+
+The recommendation process includes:
+
+1. Accepting a student's search query.
+2. Processing the query and available academic note texts.
+3. Using TF-IDF to convert the text into numerical representations based on term importance.
+4. Applying Cosine Similarity to measure the similarity between the query and uploaded notes.
+5. Calculating similarity scores.
+6. Ranking and displaying the most relevant academic resources.
+
+This feature helps students find materials that match their searched subjects or topics more efficiently.
+
+**Note:** The recommendation system measures textual relevance. A high similarity score does not guarantee that the academic content is factually correct.
+
+### 3. Note Accuracy Evaluation and Comparison
+
+This module evaluates and compares uploaded academic notes using established evaluation criteria and trusted academic reference materials.
+
+Its intended functions include:
+
+- Evaluating submitted academic notes.
+- Comparing note content with trusted reference materials.
+- Applying defined evaluation criteria.
+- Generating accuracy assessment scores or labels.
+- Ranking multiple notes covering the same subject or topic.
+
+The results help students identify notes that appear more consistent with the selected references and evaluation criteria.
+
+**Note:** Evaluation results depend on the availability, accuracy, and relevance of reference materials. They do not guarantee academic correctness and should not replace the judgment of teachers or subject matter experts.
+
+### 4. Content Moderation and Evaluation
+
+Submitted academic resources undergo a review process to assess their:
+
+- Relevance to the subject or topic.
+- Quality and organization.
+- Originality.
+- Appropriateness.
+- Compliance with platform guidelines.
+
+Administrators can approve or reject submissions based on the review process. Only eligible and approved contributions can receive LearnPoints.
+
+### 5. LearnPoints Reward System
+
+Learn2Earn introduces **LearnPoints**, an in-platform reward system that recognizes students who contribute valuable academic learning materials.
+
+- Students earn points for eligible and approved contributions.
+- Accumulated points are recorded in their accounts.
+- Students can use their points to unlock selected premium features.
+- The reward system encourages participation and academic resource sharing.
+
+**Important:** LearnPoints are virtual platform rewards only. They cannot be converted into cash, exchanged for money, or used for financial transactions.
+
+### 6. Student and Administrator Dashboards
+
+The platform provides separate dashboards for students and administrators.
+
+- **Student Dashboard:** Provides access to academic resources, search features, account information, and LearnPoints.
+- **Administrator Dashboard:** Provides access to user management, resource review, content moderation, and platform monitoring.
+
+## System Workflow
+
+The general workflow of Learn2Earn is:
+
+1. **Account Access** – Students create an account or log in to the platform.
+2. **Resource Submission** – Students upload their original academic notes and study materials.
+3. **Resource Organization** – Uploaded materials are categorized using subject, topic, course level, and other relevant information.
+4. **Content Review** – Administrators review and evaluate submitted materials.
+5. **Approval and Rewards** – Approved contributions become eligible for LearnPoints.
+6. **Resource Discovery** – Students search for academic materials and receive results ranked using TF-IDF and Cosine Similarity.
+7. **Note Evaluation** – Students can view the evaluation and comparison results of available academic notes.
+8. **Premium Feature Redemption** – Students can use accumulated LearnPoints to unlock selected premium features.
+
+## Technologies Used
+
+| Category | Technology |
+|---|---|
+| Frontend / User Interface | Flet |
+| Backend | Python |
+| Database | SQLite |
+| Text Processing and Recommendation | Scikit-learn |
+| Recommendation Algorithm | TF-IDF and Cosine Similarity |
+| Version Control and Collaboration | Git and GitHub |
+| Development Environment | Visual Studio Code |
+| Application Packaging | PyInstaller |
+
+## Project Scope and Limitations
+
+Learn2Earn is designed as a working prototype for CSPC students. It focuses on academic resource sharing, organization, recommendation, note evaluation, content moderation, and rewards.
+
+The project has the following limitations:
+
+- The prototype will be tested with selected CSPC students and will not initially be deployed across all CSPC campuses.
+- It will not integrate with the institution's official student information systems.
+- The platform is not intended to replace teachers, formal classroom instruction, or the school's learning management system.
+- The recommendation algorithm identifies textual relevance but does not independently verify factual accuracy.
+- Note accuracy evaluation depends on the available trusted reference materials and established evaluation criteria.
+- Evaluation scores and rankings are intended to assist users and are not final proof of academic correctness.
+- LearnPoints cannot be exchanged for cash or used for financial transactions.
+- The initial project will not include real-time collaboration, video conferencing, online examinations, payment systems, advanced social networking, or large-scale cloud deployment.
+
+## Resource Requirements
+
+### Hardware
+- Desktop or laptop computer
+- Internet connection
+- Mobile device for interface testing
+
+### Software
+- Python
+- Flet
+- SQLite
+- Scikit-learn
+- Git and GitHub
+- Visual Studio Code
+- PyInstaller
+
+### Personnel
+
+One team member may perform multiple responsibilities depending on the team's size, skills, and workload.
+
+| Role | Responsibilities |
+|---|---|
+| Team Leader | Coordinates the team, schedule, tasks, and project documentation. |
+| Requirements Analyst | Identifies user needs and prepares system requirements. |
+| UI/UX Designer | Designs the interface, wireframes, and user experience. |
+| Software Developer | Develops the main application and system features. |
+| Database/System Architect | Designs the database, APIs, system architecture, and UML diagrams. |
+| Algorithm/Data Developer | Develops the Academic Resource Recommendation Module using TF-IDF and Cosine Similarity and prepares the academic notes dataset. |
+| QA/Tester | Tests functionality, identifies bugs, checks system requirements, and conducts usability testing. |
+
+## Expected Deliverables
+
+The project is expected to produce:
+
+- A working Learn2Earn application prototype.
+- Student and administrator dashboards.
+- Academic resource sharing and management features.
+- An Academic Resource Recommendation Module using TF-IDF and Cosine Similarity.
+- A Note Accuracy Evaluation and Comparison Module.
+- A content moderation and evaluation process.
+- A LearnPoints reward and premium feature redemption system.
+- An academic notes dataset with relevant metadata.
+- System architecture and database design.
+- UML diagrams and system flow documentation.
+- Functional and usability testing results.
+- Technical documentation and user guidelines.
+
+## Project Team
+
+**Developers:**
+- Visitacion, Princess Shayla B.
+- Villazer, Devine Grace S.
+- Nomo, Micabelle Allison L.
+
+**Institution:** Camarines Sur Polytechnic Colleges (CSPC)
+
+**College:** College of Computer Studies
+
+**Course:** CS 3110 – Software Engineering 1
+
+**Project Adviser:** Tiffany Lyn Pandes
 
 ---
 
-### System Workflow
-
-```text
-                         START
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │ Open Learn2Earn     │
-                └──────────┬──────────┘
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │ Login / Create      │
-                │ Account             │
-                └──────────┬──────────┘
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │ Student Dashboard   │
-                └──────────┬──────────┘
-                           │
-              ┌────────────┼─────────────┐
-              │            │             │
-              ▼            ▼             ▼
-        Upload Notes   Browse/Search   Profile
-              │            │
-              │            ▼
-              │      ┌───────────────┐
-              │      │ View Academic │
-              │      │ Resources     │
-              │      └───────┬───────┘
-              │              │
-              │              ▼
-              │       Use / Interact
-              │       with Resource
-              │
-              ▼
-       ┌─────────────────────┐
-       │ Classify Resource   │
-       │ Subject / Topic /   │
-       │ Course Level        │
-       └──────────┬──────────┘
-                  │
-                  ▼
-       ┌─────────────────────┐
-       │ Content Moderation  │
-       │ & Evaluation        │
-       └──────────┬──────────┘
-                  │
-             ┌────┴─────┐
-             │          │
-             ▼          ▼
-         Approved     Rejected
-             │          │
-             │          └──────► No LearnPoints
-             │
-             ▼
-       ┌─────────────────────┐
-       │ Resource Published  │
-       └──────────┬──────────┘
-                  │
-                  ▼
-       ┌─────────────────────┐
-       │ Award LearnPoints   │
-       └──────────┬──────────┘
-                  │
-                  ▼
-       ┌─────────────────────┐
-       │ Update Student      │
-       │ Contribution        │
-       │ History             │
-       └──────────┬──────────┘
-                  │
-                  ▼
-       ┌─────────────────────┐
-       │ Redeem Selected     │
-       │ Premium Features    │
-       └─────────────────────┘
-```
-
-The system begins when a student creates an account or logs in. Students can then upload, browse, search, and manage academic resources. Uploaded materials are classified and submitted for moderation and evaluation. Approved contributions become eligible for LearnPoints, while rejected submissions do not receive points.
-
----
-
-
-## System Modules
-
-The system is divided into several major modules:
-
-```text
-Learn2Earn
-│
-├── User Management
-│   ├── Registration
-│   ├── Login
-│   └── Profile Management
-│
-├── Academic Resource Management
-│   ├── Upload Resources
-│   ├── Browse Resources
-│   ├── Search Resources
-│   └── Resource Organization
-│
-├── Content Moderation
-│   ├── Resource Review
-│   ├── Approval
-│   ├── Rejection
-│   └── Evaluation
-│
-├── LearnPoints
-│   ├── Point Awarding
-│   ├── Contribution History
-│   └── Premium Feature Redemption
-│
-├── AI Note Assistant
-│   ├── Categorization
-│   ├── Key Concept Extraction
-│   ├── Summarization
-│   └── Review Question Generation
-│
-├── Administration
-│   ├── User Management
-│   ├── Content Management
-│   ├── Reports
-│   └── Activity Monitoring
-│
-└── Database
-    ├── Users
-    ├── Learning Resources
-    ├── Classifications
-    ├── Evaluations
-    ├── Moderation
-    └── LearnPoints
-```
-
-
----
-
-## Software Requirements
-
-The following software and development tools will be used for the Learn2Earn project.
-
-| Software / Tool            | Purpose                                                          |
-| -------------------------- | ---------------------------------------------------------------- |
-| **Python**                 | Backend development, application logic, and AI/ML implementation |
-| **Flet**                   | Frontend and graphical user interface development                |
-| **SQLite**                 | Database management and data storage                             |
-| **Python AI/ML Libraries** | Development of the AI Note Assistant                             |
-| **GitHub**                 | Repository hosting, collaboration, and version control           |
-| **Visual Studio Code**     | Integrated development environment (IDE)                         |
-| **PyInstaller**            | Packaging the Python application                                 |
-
-The concept paper specifically identifies Flet, Python, SQLite, Python AI/ML libraries, GitHub, Visual Studio Code, and PyInstaller as the project's primary tools and technologies.
-
----
-
-## Project Structure
-
-The project is organized into separate directories for the user interface, backend, AI Note Assistant, database, administration, testing, documentation, and project assets.
-
-```text
-Learn2Earn/
-│
-├── app/
-│   │
-│   ├── ui/
-│   │   ├── login.py
-│   │   ├── register.py
-│   │   ├── dashboard.py
-│   │   ├── profile.py
-│   │   ├── resources.py
-│   │   ├── upload.py
-│   │   ├── search.py
-│   │   └── learnpoints.py
-│   │
-│   ├── backend/
-│   │   ├── auth.py
-│   │   ├── users.py
-│   │   ├── resources.py
-│   │   ├── search.py
-│   │   ├── moderation.py
-│   │   ├── evaluation.py
-│   │   ├── learnpoints.py
-│   │   └── rewards.py
-│   │
-│   ├── ai/
-│   │   ├── note_assistant.py
-│   │   ├── categorizer.py
-│   │   ├── keyword_extractor.py
-│   │   ├── summarizer.py
-│   │   └── question_generator.py
-│   │
-│   ├── database/
-│   │   ├── database.py
-│   │   ├── models.py
-│   │   ├── schema.sql
-│   │   └── seed.py
-│   │
-│   └── admin/
-│       ├── dashboard.py
-│       ├── users.py
-│       ├── submissions.py
-│       ├── moderation.py
-│       ├── reports.py
-│       └── activities.py
-│
-├── tests/
-│   ├── test_auth.py
-│   ├── test_users.py
-│   ├── test_resources.py
-│   ├── test_search.py
-│   ├── test_moderation.py
-│   ├── test_learnpoints.py
-│   └── test_ai.py
-│
-├── data/
-│   ├── notes/
-│   └── dataset/
-│       └── academic_notes.csv
-│
-├── docs/
-│   ├── SRS/
-│   │   └── SRS.md
-│   │
-│   ├── UML/
-│   │   ├── use_case_diagram.png
-│   │   ├── class_diagram.png
-│   │   ├── sequence_diagram.png
-│   │   └── activity_diagram.png
-│   │
-│   ├── database/
-│   │   ├── erd.png
-│   │   └── database-design.md
-│   │
-│   ├── architecture/
-│   │   └── system-architecture.png
-│   │
-│   └── testing/
-│       ├── test-plan.md
-│       └── test-results.md
-│
-├── assets/
-│   ├── screenshots/
-│   └── diagrams/
-│
-├── .gitignore
-├── requirements.txt
-├── main.py
-├── config.py
-├── verify_setup.py
-└── README.md
-```
+*Learn2Earn aims to make academic resource sharing more organized, accessible, and rewarding by providing CSPC students with a platform for sharing knowledge and discovering relevant learning materials.*

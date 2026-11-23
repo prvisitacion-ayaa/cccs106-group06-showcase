@@ -1,4 +1,12 @@
 import flet as ft
+from pathlib import Path
+import shutil
+import uuid
+
+from app.backend.resources import (
+    create_resource,
+    get_resources_by_user,
+)
 
 from app.ui.components import (
     sidebar,
@@ -12,14 +20,13 @@ BLUE = "#1455A0"
 YELLOW = "#FFD740"
 
 
-def student_screen(page, show_login):
-
+def student_screen(page, show_login, user):
     current_page = "dashboard"
 
     main_area = ft.Column(
         expand=True,
         scroll=ft.ScrollMode.AUTO,
-    )
+    )   
 
     def change_page(key):
         nonlocal current_page
@@ -289,22 +296,114 @@ def student_screen(page, show_login):
             min_lines=3,
             max_lines=5,
         )
+        
+        
+        file_picker = ft.FilePicker()
+
+        selected_file_path = None
+        selected_file = ft.Text("No file selected")
+
+        async def choose_file(e):
+            nonlocal selected_file_path
+
+            files = await file_picker.pick_files(
+                allow_multiple=False,
+                file_type=ft.FilePickerFileType.CUSTOM,
+                allowed_extensions=["pdf", "docx", "pptx"]
+            )
+
+            if not files:
+                return
+
+            selected = files[0]
+
+            if not selected.path:
+                message.value = "Unable to access the selected file."
+                message.color = ft.Colors.RED_400
+                page.update()
+                return
+
+            project_root = Path(__file__).resolve().parents[2]
+
+            upload_folder = (
+                project_root
+                / "uploads"
+                / "resources"
+                / str(user["id"])
+            )
+
+            upload_folder.mkdir(parents=True, exist_ok=True)
+
+            new_filename = (
+                f"{uuid.uuid4().hex}"
+                f"{Path(selected.name).suffix.lower()}"
+            )
+
+            destination = upload_folder / new_filename
+
+            shutil.copy2(selected.path, destination)
+
+            selected_file_path = str(
+                destination.relative_to(project_root)
+            )
+
+            selected_file.value = f"Selected: {selected.name}"
+
+            message.value = "File selected successfully."
+            message.color = ft.Colors.GREEN_700
+
+            page.update()
 
         message = ft.Text("")
 
+        
+        
         def submit(e):
+            nonlocal selected_file_path
 
-            if not title.value or not subject.value:
+            if not title.value.strip() or not subject.value.strip():
                 message.value = "Please enter the required information."
                 message.color = ft.Colors.RED_400
+
+            elif not selected_file_path:
+                message.value = "Please choose a file first."
+                message.color = ft.Colors.RED_400
+
             else:
-                message.value = (
-                    "Resource submitted for moderation. "
-                    "Approved contributions may earn Learn Points."
+                result = create_resource(
+                    user_id=user["id"],
+                    title=title.value.strip(),
+                    subject=subject.value.strip(),
+                    topic=topic.value.strip(),
+                    course=course.value.strip(),
+                    description=description.value.strip(),
+                    file_path=selected_file_path
                 )
-                message.color = ft.Colors.GREEN_700
+
+                if result["success"]:
+                    message.value = (
+                        "Resource submitted successfully for moderation! "
+                        "Approved contributions may earn Learn Points."
+                    )
+                    message.color = ft.Colors.GREEN_700
+
+                    title.value = ""
+                    subject.value = ""
+                    topic.value = ""
+                    course.value = ""
+                    description.value = ""
+
+                    selected_file_path = None
+                    selected_file.value = "No file selected"
+
+                else:
+                    message.value = (
+                        "Failed to save resource: " + result["message"]
+                    )
+                    message.color = ft.Colors.RED_400
 
             page.update()
+
 
         return ft.Column(
             controls=[
@@ -329,6 +428,7 @@ def student_screen(page, show_login):
                     "Choose File",
                     icon=ft.Icons.UPLOAD_FILE,
                     width=500,
+                    on_click=choose_file,
                 ),
 
                 ft.ElevatedButton(
@@ -347,51 +447,54 @@ def student_screen(page, show_login):
             spacing=12,
         )
 
+    
     def my_notes():
 
+        resources = get_resources_by_user(user["id"])
+
+        note_controls = [
+            top_bar("My Notes"),
+
+            ft.Container(height=20),
+
+            section_title(
+                "My Learning Resources",
+                "Manage your submitted academic materials.",
+            ),
+
+            ft.Container(height=15),
+        ]
+
+        if resources:
+
+            for resource in resources:
+
+                note_controls.append(
+                    note_card(
+                        title=resource["title"],
+                        subject=resource["subject"] or "General",
+                        topic=resource["topic"] or "General",
+                        course=resource["course"] or user.get("course", ""),
+                        level=user.get("year_level", ""),
+                        status=resource["status"].capitalize(),
+                        points=0,
+                    )
+                )
+
+        else:
+
+            note_controls.append(
+                ft.Container(
+                    padding=20,
+                    content=ft.Text(
+                        "You haven't submitted any learning resources yet.",
+                        color=ft.Colors.GREY_600,
+                    ),
+                )
+            )
+
         return ft.Column(
-            controls=[
-                top_bar("My Notes"),
-
-                ft.Container(height=20),
-
-                section_title(
-                    "My Learning Resources",
-                    "Manage your submitted academic materials.",
-                ),
-
-                ft.Container(height=15),
-
-                note_card(
-                    "Python Programming Reviewer",
-                    "Programming",
-                    "Python Basics",
-                    "BSCS",
-                    "1st Year",
-                    status="Approved",
-                    points=10,
-                ),
-
-                note_card(
-                    "Data Structures Notes",
-                    "Data Structures",
-                    "Linked Lists",
-                    "BSCS",
-                    "1st Year",
-                    status="Pending",
-                    points=15,
-                ),
-
-                note_card(
-                    "Database Reviewer",
-                    "Database",
-                    "SQL",
-                    "BSCS",
-                    "2nd Year",
-                    status="Approved",
-                    points=15,
-                ),
-            ],
+            controls=note_controls,
             spacing=12,
         )
 

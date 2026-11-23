@@ -138,9 +138,9 @@ def login_screen(page, show_student, show_admin, show_register):
         print("Role:", user["role"])
 
         if user["role"] == "admin":
-            show_admin()
+            show_admin(user)
         else:
-            show_student()
+            show_student(user)
 
     # =========================
     # FORGOT PASSWORD

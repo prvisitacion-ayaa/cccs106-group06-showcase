@@ -40,12 +40,13 @@ def main(page: ft.Page):
         )
         page.update()
 
-    def show_student():
+    def show_student(user):
         page.controls.clear()
         page.add(
             student_screen(
                 page,
-                show_login
+                show_login,
+                user
             )
         )
         page.update()
